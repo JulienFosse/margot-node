@@ -5,24 +5,25 @@ const express = require('express'),
 
 // Controller
 const homeController = require('./controllers/homeController'),
-    articleController = require('./controllers/articleController'),
-    contactController = require('./controllers/contactController'),
-    aboutController = require('./controllers/aboutController');
+    aboutController = require('./controllers/aboutController'),
+    lesRealisationsController = require('./controllers/lesRealisationsController'),
+    devisController = require('./controllers/devisController');
 
 // Home
 router.route('/')
     .get(homeController.get)
 
-// Article
-router.route('/article')
-    .get(articleController.get)
-
-// Contact
-router.route('/contact')
-    .get(contactController.get)
-
 // About
 router.route('/about')
     .get(aboutController.get)
+
+// Les Realisations
+router.route('/lesRealisations')
+    .get(lesRealisationsController.get)
+
+// Devis
+router.route('/devis')
+    .get(devisController.get)
+
 
 module.exports = router;

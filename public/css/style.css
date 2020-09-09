@@ -7820,7 +7820,7 @@ header {
   background-color: #aaaaaa; }
   .section1 .titresection1 {
     color: #e4e4e4; }
-  .section1 .underline {
+  .section1 .underlinew {
     height: 3px;
     background-color: white;
     width: 150px; }
@@ -7835,6 +7835,11 @@ header {
 .verticalline {
   width: 3px;
   background-color: black;
-  height: 30px; }
+  height: 20px; }
+
+.underlined {
+  height: 3px;
+  background-color: black;
+  width: 150px; }
 
 /*# sourceMappingURL=style.css.map */
