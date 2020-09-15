@@ -7,7 +7,8 @@ const express = require('express'),
 const homeController = require('./controllers/homeController'),
     aboutController = require('./controllers/aboutController'),
     lesRealisationsController = require('./controllers/lesRealisationsController'),
-    devisController = require('./controllers/devisController');
+    devisController = require('./controllers/devisController'),
+    contactPageController = require('./controllers/contactPageController');
 
 // Home
 router.route('/')
@@ -24,6 +25,14 @@ router.route('/lesRealisations')
 // Devis
 router.route('/devis')
     .get(devisController.get)
+
+// ContactPage
+router.route('/contactPage')
+    .get(contactPageController.get)
+
+
+
+
 
 
 module.exports = router;
