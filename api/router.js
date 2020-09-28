@@ -8,7 +8,8 @@ const homeController = require('./controllers/homeController'),
     aboutController = require('./controllers/aboutController'),
     lesRealisationsController = require('./controllers/lesRealisationsController'),
     devisController = require('./controllers/devisController'),
-    contactPageController = require('./controllers/contactPageController');
+    contactPageController = require('./controllers/contactPageController'),
+    pageAdminController = require('./controllers/pageAdminController');
 
 // Home
 router.route('/')
@@ -29,6 +30,10 @@ router.route('/devis')
 // ContactPage
 router.route('/contactPage')
     .get(contactPageController.get)
+
+// pageAdmin
+router.route('/pageAdmin')
+    .get(pageAdminController.get)
 
 
 
