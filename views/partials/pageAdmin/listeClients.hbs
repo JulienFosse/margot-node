@@ -1,0 +1,386 @@
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header row" id="headingThree">
+
+                        <div class="col-md-10">
+                            <h2 class="mb-0">
+                                <button class="btn btn-link btn-block text-left collapsed" type="button"
+                                    data-toggle="collapse" data-target="#listReal" aria-expanded="false"
+                                    aria-controls="listReal">
+                                    Liste des clients
+                                </button>
+
+                            </h2>
+                        </div>
+
+
+
+                        {{!-- Ajouter un article
+                        ------------------------------------------------------------------------------}}
+
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-success" data-toggle="modal"
+                                data-target="#ajouterClient">
+                                Ajouter un client
+                            </button>
+                        </div>
+                        {{!--
+                        <!-- Modal -->
+                        -------------------------------------------------------------------------------------------------------------------------------------}}
+                        <div class="modal fade" id="ajouterClient" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Ajouter un client</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        {{!--
+                                        Formulaire------------------------------------
+                                        --}}
+
+                                        <form action="" method="" class=" row ">
+                                            <div class="col-md-6 text-center my-4 mx-auto ">
+
+                                                <!-- Genre--->
+
+                                                <form class="needs-validation " action="" method="">
+                                                    <div class="form-row row ">
+                                                        <div class="col-md-12 mb-3 ml-auto mr-auto ">
+                                                            <label for="validationTooltip01 ">Genre</label>
+                                                            <input type="text " name="gender" class="form-control "
+                                                                id="validationTooltip01 " value="">
+                                                            <div class="valid-tooltip ">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Nom --->
+
+                                                    <div class="form-row row ">
+                                                        <div class="col-md-12 mb-3 ml-auto mr-auto ">
+                                                            <label for="validationTooltip01 ">Nom de Famille</label>
+                                                            <input type="text " name="gender" class="form-control "
+                                                                id="validationTooltip01 " value="">
+                                                            <div class="valid-tooltip ">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <!-- Prénom --->
+
+                                                    <div class="form-row ">
+                                                        <div class="col-md-12 mb-3 text-center ml-auto mr-auto ">
+                                                            <label for="validationTooltip01 ">Prénom</label>
+                                                            <input type="text" class="form-control "
+                                                                id="validationTooltip01 " value=" ">
+                                                            <div class="valid-tooltip ">
+                                                                Looks good!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Email--->
+
+                                                    <div class="form-group text-center ">
+                                                        <label for="exampleFormControlTextarea1 ">Email</label>
+                                                        <input type="email" class="form-control "
+                                                            id="validationTooltip01 " value="">
+                                                    </div>
+
+                                                    <!-- Adresse--->
+
+                                                    <div class="form-group text-center ">
+                                                        <label for="exampleFormControlTextarea1 ">Adresse</label>
+                                                        <input type="text" class="form-control "
+                                                            id="validationTooltip01 " value="">
+                                                    </div>
+
+                                                    <!-- Téléphone--->
+
+                                                    <div class="form-group text-center ">
+                                                        <label for="exampleFormControlTextarea1 ">Téléphone</label>
+                                                        <input type="text" class="form-control"
+                                                            id="validationTooltip01 " value="">
+                                                    </div>
+
+                                                    <!-- Statut du client--->
+
+                                                    <div class="form-group text-center ">
+                                                        <label for="exampleFormControlTextarea1 ">Statut du client</label>
+                                                        <input type="text" class="form-control "
+                                                            id="validationTooltip01 " value="">
+                                                    </div>
+
+                                                    <!-- Statut de l'entreprise--->
+
+                                                    <div class="form-group text-center ">
+                                                        <label for="exampleFormControlTextarea1 ">Statut de l'entreprise</label>
+                                                        <input type="text" class="form-control "
+                                                            id="validationTooltip01 " value="">
+                                                    </div>
+
+                                                    <!-- Raison sociale--->
+
+                                                    <div class="form-group text-center ">
+                                                        <label for="exampleFormControlTextarea1 ">Raison Sociale</label>
+                                                        <input type="text" class="form-control "
+                                                            id="validationTooltip01 " value="">
+                                                    </div>
+
+                                                    <!-- N° de SIRET--->
+
+                                                    <div class="form-group text-center ">
+                                                        <label for="exampleFormControlTextarea1 ">N° de SIRET</label>
+                                                        <input type="text" class="form-control "
+                                                            id="validationTooltip01 " value="">
+                                                    </div>
+                                                  
+
+                                                    {{!-- bouton envoyer --}}
+
+                                                    <div class="row ">
+                                                        <div class="col-md-12 text-center mt-3 mb-1">
+                                                            <button class="btn btn-dark " type="submit">Ajouter le client</button>
+                                                        </div>
+                                                    </div>
+
+
+                                                </form>
+                                            </div>
+                                        </form>
+                                        <div class="modal-footer"></div>
+
+                                        {{!-- /formulaire
+                                        ------------------------------------------------------------------------------------------------------}}
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    {{!--
+                    Tableau---------------------------------------------------------------------------------------------------------------
+                    --}}
+
+
+                    <div id="listReal" class="collapse show" aria-labelledby="listReal" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead class="thead-dark ">
+                                    <tr class="">
+                                        <div class="row text-center">
+
+                                            <th scope="col" class="text-center mx-auto">Genre</th>
+                                            <th scope="col" class="text-center mx-auto">Nom</th>
+                                            <th scope="col" class="text-center mx-auto">Prénom</th>
+                                            <th scope="col" class="text-center mx-auto">Email</th>
+                                            <th scope="col" class="text-center mx-auto">Adresse</th>
+                                            <th scope="col" class="text-center mx-auto">Téléphone</th>
+                                            <th scope="col" class="text-center mx-auto">Statut Client</th>
+                                            <th scope="col" class="text-center mx-auto">Statut Entreprise</th>
+                                            <th scope="col" class="text-center mx-auto">Raison Sociale</th>
+                                            <th scope="col" class="text-center mx-auto">N° de SIRET</th>
+                                            <th scope="col" class="text-center mx-auto">Modifier</th>
+                                            <th scope="col" class="text-center mx-auto">Supprimer</th>
+
+                                        </div>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{!-- Données du Tableau ---------------------------}}
+                                    <tr>
+
+                                        <td class="text-center">{{Clients.gender}}</td>
+                                        <td class="text-center">{{Clients.name}}</td>
+                                        <td class="text-center">{{Clients.firstName}}</td>
+                                        <td class="text-center">{{Clients.adress}}</td>
+                                        <td class="text-center">{{Clients.email}}</td>
+                                        <td class="text-center">{{Clients.phone}}</td>
+                                        <td class="text-center">{{Clients.status}}</td>
+                                        <td class="text-center">{{Clients.statusEntreprise}}</td>
+                                        <td class="text-center">{{Clients.raisonSociale}}</td>
+                                        <td class="text-center">{{Clients.siret}}</td>
+
+
+
+
+                                        {{!-- Bouton Modifier --}}
+
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                                                data-target="#modifierReal">
+                                                Modifier
+                                            </button>
+                                        </td>
+
+                                        {{!-- Modal
+                                        ------------------------------------------------------------------------------
+                                        --}}
+
+                                        <div class="modal fade" id="modifierReal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Ajouetr une
+                                                            réalisation</h5>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        {{!--
+                                                        Formulaire------------------------------------
+                                                        --}}
+
+                                                        <div class=" row ">
+                                                            <div class="col-md-6 text-center my-4 mx-auto ">
+
+                                                                <!-- Titre--->
+
+                                                                <form class="needs-validation " action="" method="">
+                                                                    <div class="form-row row ">
+                                                                        <div class="col-md-12 mb-3 ml-auto mr-auto ">
+                                                                            <label
+                                                                                for="validationTooltip01 ">Titre</label>
+                                                                            <input type="text " name="title"
+                                                                                class="form-control "
+                                                                                id="validationTooltip01 " value=" ">
+                                                                            <div class="valid-tooltip ">
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- Description --->
+
+                                                                    <div class="form-row row ">
+                                                                        <div class="col-md-12 mb-3 ml-auto mr-auto">
+                                                                            <label for="validationTooltip01">Description
+                                                                                de la
+                                                                                réalisation</label>
+                                                                            <textarea class="form-control "
+                                                                                id="exampleFormControlTextarea1 "
+                                                                                rows="3 "></textarea>
+
+                                                                            <div class="valid-tooltip">
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <!-- Prix --->
+
+                                                                    <div class="form-row ">
+                                                                        <div
+                                                                            class="col-md-12 mb-3 text-center ml-auto mr-auto ">
+                                                                            <label for="validationTooltip01 ">Prix de la
+                                                                                réalisation</label>
+                                                                            <input type="text" class="form-control "
+                                                                                id="validationTooltip01 " value=" ">
+                                                                            <div class="valid-tooltip ">
+                                                                                Looks good!
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- Temps passé--->
+
+                                                                    <div class="form-group text-center ">
+                                                                        <label for="exampleFormControlTextarea1 ">Temps
+                                                                            passé</label>
+                                                                        <input type="text" class="form-control "
+                                                                            id="validationTooltip01 " value=" ">
+                                                                    </div>
+
+                                                                    {{!-- Choisir un fichier --}}
+
+                                                                    <div class="mb-3">
+                                                                        <label for="formFile" class="form-label">Ajouter
+                                                                            une
+                                                                            image</label>
+                                                                        <input class="form-control" name="image"
+                                                                            type="file" id="formFile">
+                                                                    </div>
+
+                                                                    {{!-- bouton envoyer --}}
+
+                                                                    <div class="row ">
+                                                                        <div class="col-md-12 text-center my-5 ">
+                                                                            <button class="btn btn-dark "
+                                                                                type="submit">Ajouter</button>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer"></div>
+
+                                                        {{!-- /formulaire
+                                                        ------------------------------------------------------------------------------------------------------}}
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        {{!-- Bouton Supprimer --}}
+
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                data-target="#deleteItem">
+                                                Supprimer
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
+</div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
