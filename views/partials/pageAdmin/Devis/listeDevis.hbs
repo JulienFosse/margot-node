@@ -1,0 +1,122 @@
+{{!-- Collapse liste client --}}
+<div class="card">
+
+
+    {{!-- Header du collapse --}}
+    <div class="card-header" id="listDevis">
+        <h2 class="mb-0">
+            <button class="btn btn-link btn-block" type="button" data-toggle="collapse" data-target="#collapseDevis"
+                aria-expanded="true" aria-controls="collapseDevis">
+                <h5>Liste de demande de devis</h5>
+            </button>
+        </h2>
+    </div>
+    {{!-- / Header du collapse --}}
+
+
+
+
+    <div id="collapseDevis" class="collapse show" aria-labelledby="listDevis" data-parent="#accordionExample">
+        <div class="card-body">
+
+
+            {{!-- Bouton ajouter un devis --}}
+
+            <div class="col-md-2 float-right mb-2 ">
+                <button type="button" class="btn btn-success pull-right " data-toggle="modal"
+                    data-target="#ajouterDevis">
+                    Ajouter un devis
+                </button>
+            </div>
+
+            {{!-- / Bouton ajouter un devis --}}
+
+
+
+
+
+            {{!-- Modal Create client --}}
+
+            {{> pageAdmin/Devis/modalCreateDevis}}
+
+
+            {{!-- / Modal Create client --}}
+
+
+
+
+
+            <table class="table table-bordered">
+                {{!-- Header du tableau --}}
+                <thead class="thead-dark ">
+                    <tr class="">
+                        <div class="row text-center">
+
+                            <th scope="col" class="text-center">Intitulé</th>
+                            <th scope="col" class="text-center">Objet</th>
+                            <th scope="col" class="text-center">Description</th>
+                            <th scope="col" class="text-center">Nom</th>
+                            <th scope="col" class="text-center">Prénom</th>
+                            <th scope="col" class="text-center">Adresse mail</th>
+                            <th scope="col" class="text-center">Modifier</th>
+                            <th scope="col" class="text-center">Supprimer</th>
+
+                        </div>
+                    </tr>
+                </thead>
+                {{!-- Header du tableau --}}
+
+                {{!-- Corps du tableau (body) avec each pour item répété --}}
+                <tbody>
+                    {{!-- Données du Tableau ---------------------------}}
+                    {{#each dbArticle }}
+
+                    <tr>
+
+                        <td class="text-center">{{ this.entitled }}</td>
+                        <td class="text-center">{{ this.object }}</td>
+                        <td class="text-center">{{ this.content }}</td>                        
+                        <td class="text-center">{{ this.name }}</td>
+                        <td class="text-center">{{ this.firstName }}</td>
+                        <td class="text-center">{{ this.email }}</td>
+
+                        {{!-- Bouton Modifier --}}
+                        <td class="text-center">
+                            <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                                data-target="#modifierReal{{_id}}">
+                                Modifier
+                            </button>
+                        </td>
+                        {{!-- / Bouton Modifier --}}
+
+                        {{!-- Bouton Supprimer --}}
+                        <td class="text-center">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteItem">
+                                Supprimer
+                            </button>
+                        </td>
+                        {{!-- / Bouton Supprimer --}}
+
+
+
+
+                        {{!-- Modal Modifier Devis --}}
+
+                        {{> pageAdmin/Devis/modalModifierDevis}}
+
+                        {{!-- / Modal Modifier Devis --}}
+
+                    </tr>
+
+                    {{/each}}
+
+                </tbody>
+                {{!-- / Corps du tableau --}}
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{{!-- / Collapse liste client --}}

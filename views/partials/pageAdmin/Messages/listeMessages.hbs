@@ -1,0 +1,86 @@
+<div class="card my-3">
+
+
+    {{!-- Header du ollapse --}}
+
+    <div class="card-header" id="listMessages">
+        <h2 class="mb-0">
+            <button class="btn btn-link btn-block" type="button" data-toggle="collapse" data-target="#collapseMessages"
+                aria-expanded="true" aria-controls="collapseMessages">
+                <h5>Liste des messages</h5>
+            </button>
+        </h2>
+    </div>
+
+    {{!-- / Header du ollapse --}}
+
+
+
+
+    <div id="collapseMessages" class="collapse show" aria-labelledby="listMessages" data-parent="#accordionExample">
+        <div class="card-body">
+
+
+            <table class="table table-bordered">
+
+
+                {{!-- Header du tableau --}}
+
+                <thead class="thead-dark ">
+                    <tr class="">
+                        <div class="row text-center">
+
+                            
+                            <th scope="col" class="text-center mx-auto">Nom</th>
+                            <th scope="col" class="text-center mx-auto">Prénom</th>
+                            <th scope="col" class="text-center mx-auto">Email</th>
+                            <th scope="col" class="text-center mx-auto">Objet de la demande</th>
+                            <th scope="col" class="text-center mx-auto">Description</th>
+                            
+
+                        </div>
+                    </tr>
+                </thead>
+                {{!-- Header du tableau --}}
+
+
+
+                {{!-- Contenu du tableau avec each pour item répété --}}
+
+                <tbody>
+
+                    {{#each dbArticle }}
+
+                    <tr>
+
+                        <td class="text-center">{{ this.name }}</td>
+                        <td class="text-center">{{ this.firstName }}</td>
+                        <td class="text-center">{{ this.email }}</td>
+                        <td class="text-center">{{ this.object }}</td>
+                        <td class="text-center">{{ this.content }}</td>
+                        
+
+
+                        {{!-- Bouton Supprimer --}}
+
+                        <td class="text-center">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteItem">
+                                Supprimer
+                            </button>
+                        </td>
+                        {{!-- / Bouton Supprimer --}}
+
+                    </tr>
+
+                    {{/each}}
+
+                </tbody>
+                {{!-- / Contenu du tableau --}}
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{{!-- / Collapse liste client --}}

@@ -1,0 +1,134 @@
+{{!-- Collapse liste client --}}
+<div class="card my-5">
+
+
+    {{!-- Header du ollapse --}}
+
+    <div class="card-header" id="listClient">
+        <h2 class="mb-0">
+            <button class="btn btn-link btn-block" type="button" data-toggle="collapse" data-target="#collapseClient"
+                aria-expanded="true" aria-controls="collapseClient">
+                <h5>Liste des clients</h5>
+            </button>
+        </h2>
+    </div>
+
+    {{!-- / Header du ollapse --}}
+
+
+
+
+    <div id="collapseClient" class="collapse show" aria-labelledby="listClient" data-parent="#accordionExample">
+        <div class="card-body">
+
+            <div class="col-md-2 float-right mb-2 ">
+                <button type="button" class="btn btn-success pull-right " data-toggle="modal"
+                    data-target="#ajouterClient">
+                    Ajouter un client
+                </button>
+            </div>
+
+
+
+            {{!-- Modal Create client -----------------------}}
+
+            {{> pageAdmin/Clients/modalCreateClient }}
+
+            {{!-- / Modal Create client ---------------------}}
+
+
+
+            <table class="table table-bordered">
+
+
+                {{!-- Header du tableau --}}
+
+                <thead class="thead-dark ">
+                    <tr class="">
+                        <div class="row text-center">
+
+                            <th scope="col" class="text-center mx-auto">Genre</th>
+                            <th scope="col" class="text-center mx-auto">Nom</th>
+                            <th scope="col" class="text-center mx-auto">Prénom</th>
+                            <th scope="col" class="text-center mx-auto">Email</th>
+                            <th scope="col" class="text-center mx-auto">Adresse</th>
+                            <th scope="col" class="text-center mx-auto">Téléphone</th>
+                            <th scope="col" class="text-center mx-auto">Statut Client</th>
+                            <th scope="col" class="text-center mx-auto">Statut Entreprise</th>
+                            <th scope="col" class="text-center mx-auto">Raison Sociale</th>
+                            <th scope="col" class="text-center mx-auto">N° de SIRET</th>
+                            <th scope="col" class="text-center mx-auto">Modifier</th>
+                            <th scope="col" class="text-center mx-auto">Supprimer</th>
+
+                        </div>
+                    </tr>
+                </thead>
+                {{!-- Header du tableau --}}
+
+
+
+                {{!-- Contenu du tableau avec each pour item répété --}}
+
+                <tbody>
+
+                    {{#each dbArticle }}
+
+                    <tr>
+
+                        <td class="text-center">{{ this.gender }}</td>
+                        <td class="text-center">{{ this.name }}</td>
+                        <td class="text-center">{{ this.firstName }}</td>
+                        <td class="text-center">{{ this.email }}</td>
+                        <td class="text-center">{{ this.adress }}</td>
+                        <td class="text-center">{{ this.phone }}</td>
+                        <td class="text-center">{{ this.status }}</td>
+                        <td class="text-center">{{ this.statutEntreprise}}</td>
+                        <td class="text-center">{{ this.raisonSociale}}</td>
+                        <td class="text-center"{{ this.siret }}></td>
+
+
+
+                        {{!-- Bouton Modifier --}}
+
+                        <td class="text-center">
+                            <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                                data-target="#modifierReal{{_id}}">
+                                Modifier
+                            </button>
+                        </td>
+                        {{!-- / Bouton Modifier --}}
+
+
+
+
+                        {{!-- Modal modifier données client --}}
+
+                        {{> pageAdmin/Clients/modalModifierClient }}
+
+                        {{!-- / Modal modifier données client --}}
+
+
+
+
+                        {{!-- Bouton Supprimer --}}
+                        <td class="text-center">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteItem">
+                                Supprimer
+                            </button>
+                        </td>
+                        {{!-- / Bouton Supprimer --}}
+
+                    </tr>
+
+                    {{/each}}
+
+                </tbody>
+                {{!-- / Contenu du tableau --}}
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{{!-- / Collapse liste client --}}

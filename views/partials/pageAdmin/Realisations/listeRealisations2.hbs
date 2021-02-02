@@ -1,0 +1,124 @@
+{{!-- Collapse liste client --}}
+<div class="card my-3">
+
+
+    {{!-- Header du ollapse --}}
+
+    <div class="card-header" id="listReal">
+        <h2 class="mb-0">
+            <button class="btn btn-link btn-block" type="button" data-toggle="collapse" data-target="#collapseReal"
+                aria-expanded="true" aria-controls="collapseReal">
+                <h5>Liste des réalisations</h5>
+            </button>
+        </h2>
+    </div>
+
+    {{!-- / Header du ollapse --}}
+
+
+
+
+    <div id="collapseReal" class="collapse show" aria-labelledby="listReal" data-parent="#accordionExample">
+        <div class="card-body">
+
+            <div class="col-md-3 float-right mb-2 ">
+                <button type="button" class="btn btn-success pull-right " data-toggle="modal"
+                    data-target="#ajouterReal">
+                    Ajouter une réalisation
+                </button>
+            </div>
+
+
+
+            {{!-- Modal Create Realisation -----------------------}}
+
+            {{> pageAdmin/Realisations/modalCreateRealisation }}
+
+            {{!-- / Modal Create Realisation ---------------------}}
+
+
+
+            <table class="table table-bordered">
+
+
+                {{!-- Header du tableau --}}
+
+                <thead class="thead-dark ">
+                    <tr class="">
+                        <div class="row text-center">
+
+                            <th scope="col" class="text-center">Titre</th>
+                            <th scope="col" class="text-center">Description</th>
+                            <th scope="col" class="text-center">Prix</th>
+                            <th scope="col" class="text-center">Temps passé</th>
+                            <th scope="col" class="text-center">Fichier</th>
+                            <th scope="col" class="text-center">Modifier</th>
+                            <th scope="col" class="text-center">Supprimer</th>
+
+                        </div>
+                    </tr>
+                </thead>
+                {{!-- Header du tableau --}}
+
+
+
+                {{!-- Contenu du tableau avec each pour item répété --}}
+
+                <tbody>
+
+                    {{#each dbArticle }}
+
+                    <tr>
+
+                        <td class="text-center">{{ this.title}}</td>
+                        <td class="text-center">{{ this.content}}</td>
+                        <td class="text-center">{{ this.price}}</td>
+                        <td class="text-center">{{ this.time}}</td>
+                        <td class="text-center">{{ this.image}}</td>
+
+
+
+                        {{!-- Bouton Modifier --}}
+
+                        <td class="text-center">
+                            <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                                data-target="#modifierReal{{_id}}">
+                                Modifier
+                            </button>
+                        </td>
+                        {{!-- / Bouton Modifier --}}
+
+
+
+
+                        {{!-- Modal modifier données client --}}
+
+                        {{> pageAdmin/Clients/modalModifierClient }}
+
+                        {{!-- / Modal modifier données client --}}
+
+
+
+
+                        {{!-- Bouton Supprimer --}}
+                        <td class="text-center">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteItem">
+                                Supprimer
+                            </button>
+                        </td>
+                        {{!-- / Bouton Supprimer --}}
+
+                    </tr>
+
+                    {{/each}}
+
+                </tbody>
+                {{!-- / Contenu du tableau --}}
+
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{{!-- / Collapse liste client --}}

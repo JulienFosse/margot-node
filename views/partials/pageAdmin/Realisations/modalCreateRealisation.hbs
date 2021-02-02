@@ -1,0 +1,89 @@
+<div class="modal fade" id="ajouterReal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ajouter une réalisation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                {{!--
+                Formulaire------------------------------------
+                --}}
+
+                <form class="needs-validation " action="" method="">
+                    <div class="form-row row ">
+                        <div class="col-md-6 mx-auto text-center mb-3 ">
+                            <label for="validationTooltip01 ">Titre</label>
+                            <input type="text " name="title" class="form-control " id="validationTooltip01 " value=" ">
+                            <div class="valid-tooltip ">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description --->
+
+                    <div class="form-row row ">
+                        <div class="col-md-6 mx-auto text-center mb-3 ">
+                            <label for="validationTooltip01">Description de la
+                                réalisation</label>
+                            <textarea class="form-control " id="exampleFormControlTextarea1 " rows="3 "></textarea>
+
+                            <div class="valid-tooltip">
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Prix --->
+
+                    <div class="form-row ">
+                        <div class="col-md-6 mx-auto text-center mb-3 ">
+                            <label for="validationTooltip01 ">Prix de la
+                                réalisation</label>
+                            <input type="text" class="form-control " id="validationTooltip01 " value=" ">
+                            <div class="valid-tooltip ">
+                                Looks good!
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Temps passé--->
+
+                    <div class="form-group col-md-6 mx-auto text-center mb-3 ">
+                        <label for="exampleFormControlTextarea1 ">Temps passé</label>
+                        <input type="text" class="form-control " id="validationTooltip01 " value=" ">
+                    </div>
+
+                    {{!-- Choisir un fichier --}}
+
+                    <div class="col-md-6 mx-auto text-center mb-3 ">
+                        <label for="formFile" class="form-label">Ajouter une
+                            image</label>
+                        <input class="form-control" name="image" type="file" id="formFile">
+                    </div>
+
+                    {{!-- bouton envoyer --}}
+
+                    <div class="row ">
+                        <div class="col-md-12 text-center my-5 ">
+                            <button class="btn btn-dark " type="submit">Ajouter la réalisation</button>
+                        </div>
+                    </div>
+
+
+                </form>
+                <div class="modal-footer"></div>
+
+                {{!-- /formulaire
+                ------------------------------------------------------------------------------------------------------}}
+
+            </div>
+
+        </div>
+    </div>
+</div>
