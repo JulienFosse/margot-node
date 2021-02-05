@@ -12,6 +12,4 @@ const DevisSchema = new mongoose.Schema({
 
 })
 
-const Devis = mongoose.model('Devis', DevisSchema)
-
-module.exports = Devis
+module.exports = mongoose.model('Devis', DevisSchema)

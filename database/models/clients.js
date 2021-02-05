@@ -5,7 +5,7 @@ const ClientsSchema = new mongoose.Schema({
 
     gender: String,
     name: String,
-    firstname: String,
+    firstName: String,
     email: String,
     adress: String,
     phone: String,
@@ -18,6 +18,4 @@ const ClientsSchema = new mongoose.Schema({
 
 })
 
-const Clients = mongoose.model('Clients', ClientsSchema)
-
-module.exports = Clients
+module.exports = mongoose.model('Clients', ClientsSchema)

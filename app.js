@@ -3,9 +3,9 @@ const
     express = require('express'),
     app = express(),
     hbs = require('express-handlebars'),
-    bodyParser = require('body-parser'),
     port = process.env.PORT || 3000,
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'), // Permet de se connecter à MongoDB
+    bodyParser = require('body-parser'); // Permet de récupérer la méthode POST et de lire son format JSON
 
 
 // Handlebars
@@ -27,8 +27,7 @@ mongoose.connect(urlDb, {
     useFindAndModify: false // Gaëtan
 })
 
-// Body parser permet de parser les data d'une page à l'autre en passant par les controllers, ... 
-// Parser = https://fr.wiktionary.org/wiki/parser
+// Paramètres pour activer BodyParser (voir body-parser npm)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
@@ -37,7 +36,7 @@ app.use(bodyParser.urlencoded({
 
 
 
-// Routes
+// Controllers
 const homeController = require('./controllers/homePage'),
     aboutController = require('./controllers/about'),
     lesRealisationsController = require('./controllers/lesRealisations'),
@@ -45,7 +44,16 @@ const homeController = require('./controllers/homePage'),
     contactPageController = require('./controllers/contact'),
     pageAdminController = require('./controllers/pageAdmin'),
     userCreateController = require('./controllers/userCreate'),
-    userLoginController = require('./controllers/userLogin');
+    userLoginController = require('./controllers/userLogin'),
+    realisationPostController = require('./controllers/realisationPostController'),
+    realisationDeleteController = require('./controllers/realisationDeleteController'),
+    clientPostController = require('./controllers/clientPostController'),
+    realisationAffichageController = require('./controllers/realisationAffichageController'),
+    realisationModifierController = require('./controllers/realisationModifierController');
+
+
+
+// Routes
 
 app.get('/', homeController)
 app.get('/about', aboutController)
@@ -55,6 +63,51 @@ app.get('/contactPage', contactPageController)
 app.get('/pageAdmin', pageAdminController)
 app.get('/user/create', userCreateController)
 app.get('/user/login', userLoginController)
+
+
+
+
+
+// PAGE ADMIN
+
+// Liste des Realisations
+
+// Afficher realisation par son id
+
+const realisation = require('./database/models/realisations')
+
+app.get('/realisation/:id', async function(req, res) {
+
+    const realisationId = await realisation.findById(req.params.id).lean()
+
+    console.log(req.params.id);
+
+    res.render('realisationId', { realisationId })
+})
+
+// Methode POST pour créer un post
+
+app.post('/realisation/post', realisationPostController) // Modal Ajouter une réalisation
+
+// Afficher les données
+
+app.get('/admin', realisationAffichageController.getRealisation)
+
+// Modifier les données
+
+app.post('/realisation/edit', realisationModifierController.editRealisation)
+
+// Supprimer les données
+
+app.delete('/realisation/delete', realisationDeleteController.deleteOneRealisation)
+
+
+
+
+
+// Liste des clients
+
+app.post('/client/post', clientPostController) // Modal Ajouter un client 
 
 
 

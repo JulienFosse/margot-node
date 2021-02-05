@@ -11,6 +11,4 @@ const RealisationsSchema = new mongoose.Schema({
 
 })
 
-const Realisations = mongoose.model('Realisations', RealisationsSchema)
-
-module.exports = Realisations
+module.exports = mongoose.model('realisations', RealisationsSchema)
