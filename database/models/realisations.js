@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 const RealisationsSchema = new mongoose.Schema({
 
 
-    title: String,
-    content: String,
-    price: String,
-    time: String,
-    image: String,
+    titleReal: String,
+    contentReal: String,
+    priceReal: String,
+    timeReal: String,
+    imageReal: String,
 
 })
 
-module.exports = mongoose.model('realisations', RealisationsSchema)
+const realisation = mongoose.model('realisations', RealisationsSchema)
+
+module.exports = realisation

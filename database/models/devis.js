@@ -2,14 +2,15 @@ const mongoose = require('mongoose');
 
 const DevisSchema = new mongoose.Schema({
 
-
     entitled: String,
     object: String,
     content: String,
-    name: String,
-    Firstname: String,
-    email: String
+    nameDevis: String,
+    firstNameDevis: String,
+    emailDevis: String
 
 })
 
-module.exports = mongoose.model('Devis', DevisSchema)
+const devis = mongoose.model('Devis', DevisSchema)
+
+module.exports = devis

@@ -15,11 +15,11 @@
 
             <!-- Nom--->
 
-            <form class="needs-validation " novalidate>
+            <form action="/message/post" method="POST" class="needs-validation ">
                 <div class="form-row row ">
                     <div class="col-md-6 mb-3 ml-auto mr-auto ">
                         <label for="validationTooltip01 ">Nom</label>
-                        <input type="text " class="form-control " id="validationTooltip01 " value=" " required>
+                        <input type="text" name="nameMessage" class="form-control " id="validationTooltip01 " value=" ">
                         <div class="valid-tooltip ">
                             Looks good!
                         </div>
@@ -29,7 +29,7 @@
 
                     <div class="col-md-6 mb-3 ml-auto mr-auto ">
                         <label for="validationTooltip01 ">Prénom</label>
-                        <input type="text " class="form-control " id="validationTooltip01 " value=" " required>
+                        <input type="text" name="firstNameMessage" class="form-control " id="validationTooltip01 " value=" ">
                         <div class="valid-tooltip ">
                             Looks good!
                         </div>
@@ -39,7 +39,7 @@
 
                     <div class="col-md-6 mb-3 ml-auto mr-auto ">
                         <label for="validationTooltip01 ">Adresse Mail</label>
-                        <input type="text " class="form-control " id="validationTooltip01 " value=" " required>
+                        <input type="text" name="emailMessage" class="form-control " id="validationTooltip01 " value=" " >
                         <div class="valid-tooltip ">
                             Looks good!
                         </div>
@@ -51,7 +51,7 @@
                 <div class="form-row ">
                     <div class="col-md-12 mb-3 text-center ml-auto mr-auto ">
                         <label for="validationTooltip01 ">Objet :</label>
-                        <input type="text " class="form-control " id="validationTooltip01 " value=" " required>
+                        <input type="text" name="objectMessage" class="form-control " id="validationTooltip01 " value=" ">
                         <div class="valid-tooltip ">
                             Looks good!
                         </div>
@@ -61,14 +61,16 @@
                 <!-- Commentaires- -->
 
                 <div class="form-group text-center ">
-                    <label for="exampleFormControlTextarea1 ">Commentaires</label>
-                    <textarea class="form-control " id="exampleFormControlTextarea1 " rows="3 "></textarea>
+                    <label for="exampleFormControlTextarea1 ">Description</label>
+                    <textarea class="form-control" name="contentMessage" id="exampleFormControlTextarea1 " rows="3 "></textarea>
                 </div>
+
                 <div class="row ">
                     <div class="col-md-12 text-center my-5 ">
-                        <button class="btn btn-dark " type="button "> Envoyer</button>
+                        <button class="btn btn-dark " type="submit"> Envoyer</button>
                     </div>
                 </div>
+                
             </form>
         </div>
     </div>

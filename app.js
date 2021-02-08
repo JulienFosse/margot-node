@@ -5,7 +5,10 @@ const
     hbs = require('express-handlebars'),
     port = process.env.PORT || 3000,
     mongoose = require('mongoose'), // Permet de se connecter à MongoDB
-    bodyParser = require('body-parser'); // Permet de récupérer la méthode POST et de lire son format JSON
+    bodyParser = require('body-parser'), // Permet de récupérer la méthode POST et de lire son format JSON
+    fileUpload = require('express-fileupload'),
+    methodOverride = require('method-override');
+
 
 
 // Handlebars
@@ -33,6 +36,17 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 
+// Module FileUpload
+app.use(fileUpload());
+
+// Module Override
+app.use(methodOverride("_method"));
+
+
+// ROUTER
+const ROUTER = require('./controllers/router')
+app.use('/', ROUTER)
+
 
 
 
@@ -44,12 +58,11 @@ const homeController = require('./controllers/homePage'),
     contactPageController = require('./controllers/contact'),
     pageAdminController = require('./controllers/pageAdmin'),
     userCreateController = require('./controllers/userCreate'),
-    userLoginController = require('./controllers/userLogin'),
-    realisationPostController = require('./controllers/realisationPostController'),
-    realisationDeleteController = require('./controllers/realisationDeleteController'),
-    clientPostController = require('./controllers/clientPostController'),
-    realisationAffichageController = require('./controllers/realisationAffichageController'),
-    realisationModifierController = require('./controllers/realisationModifierController');
+    userLoginController = require('./controllers/userLogin');
+
+
+
+
 
 
 
@@ -65,49 +78,6 @@ app.get('/user/create', userCreateController)
 app.get('/user/login', userLoginController)
 
 
-
-
-
-// PAGE ADMIN
-
-// Liste des Realisations
-
-// Afficher realisation par son id
-
-const realisation = require('./database/models/realisations')
-
-app.get('/realisation/:id', async function(req, res) {
-
-    const realisationId = await realisation.findById(req.params.id).lean()
-
-    console.log(req.params.id);
-
-    res.render('realisationId', { realisationId })
-})
-
-// Methode POST pour créer un post
-
-app.post('/realisation/post', realisationPostController) // Modal Ajouter une réalisation
-
-// Afficher les données
-
-app.get('/admin', realisationAffichageController.getRealisation)
-
-// Modifier les données
-
-app.post('/realisation/edit', realisationModifierController.editRealisation)
-
-// Supprimer les données
-
-app.delete('/realisation/delete', realisationDeleteController.deleteOneRealisation)
-
-
-
-
-
-// Liste des clients
-
-app.post('/client/post', clientPostController) // Modal Ajouter un client 
 
 
 

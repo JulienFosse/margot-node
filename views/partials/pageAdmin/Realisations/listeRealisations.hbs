@@ -19,7 +19,7 @@
 
 
     <div id="collapseReal" class="collapse show" aria-labelledby="listReal" data-parent="#accordionExample">
-        <div class="card-body">
+        <div class="card-body mx-6">
 
             <div class="col-md-3 float-right mb-2 ">
                 <button type="button" class="btn btn-success pull-right " data-toggle="modal"
@@ -67,12 +67,12 @@
                 <tbody>
                    
 
-                    {{#each dataRealisations }}
+                    {{#each realisation }} <!-- realisationAffichageController-->
 
 
                     <tr>
 
-                        <td class="text-center">{{ title}}</td>
+                        <td class="text-center">{{ this.title}}</td>
                         <td class="text-center">{{ content}}</td>
                         <td class="text-center">{{ price}}</td>
                         <td class="text-center">{{ time}}</td>

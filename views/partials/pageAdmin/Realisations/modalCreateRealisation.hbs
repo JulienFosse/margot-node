@@ -15,11 +15,11 @@
 
                 {{!-- Titre --}}
 
-                <form class="needs-validation " action="/realisation/post" method="POST" enctype="multipart/form-data">
+                <form class="needs-validation " action="/admin/createReal" method="POST" enctype="multipart/form-data">
                     <div class="form-row row ">
                         <div class="col-md-6 mx-auto text-center mb-3 ">
                             <label for="validationTooltip01 ">Titre</label>
-                            <input type="text " name="title" class="form-control " id="validationTooltip01 " value=" ">
+                            <input type="text " name="titleReal" class="form-control " id="validationTooltip01 " value=" ">
                             <div class="valid-tooltip ">
 
                             </div>
@@ -33,7 +33,7 @@
                             <label for="validationTooltip01">Description de la
                                 réalisation</label>
 
-                            <textarea class="form-control " name="content" id="exampleFormControlTextarea1 "
+                            <textarea class="form-control " name="contentReal" id="exampleFormControlTextarea1 "
                                 rows="3 "></textarea>
 
                             <div class="valid-tooltip">
@@ -49,7 +49,7 @@
                         <div class="col-md-6 mx-auto text-center mb-3 ">
                             <label for="validationTooltip01 ">Prix de la
                                 réalisation</label>
-                            <input type="text" name="price" class="form-control " id="validationTooltip01 " value=" ">
+                            <input type="text" name="priceReal" class="form-control " id="validationTooltip01 " value=" ">
                             <div class="valid-tooltip ">
                                 Looks good!
                             </div>
@@ -60,7 +60,7 @@
 
                     <div class="form-group col-md-6 mx-auto text-center mb-3 ">
                         <label for="exampleFormControlTextarea1 ">Temps passé</label>
-                        <input type="text" name="time" class="form-control " id="validationTooltip01 " value=" ">
+                        <input type="text" name="timeReal" class="form-control " id="validationTooltip01 " value=" ">
                     </div>
 
                     {{!-- Choisir un fichier --}}
@@ -68,7 +68,7 @@
                     <div class="col-md-6 mx-auto text-center mb-3 ">
                         <label for="formFile" class="form-label">Ajouter une
                             image</label>
-                        <input class="form-control" name="image" type="file" id="formFile">
+                        <input class="form-control" name="imageReal" type="file" id="formFile">
                     </div>
 
                     {{!-- bouton envoyer --}}

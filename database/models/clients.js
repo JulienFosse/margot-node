@@ -12,10 +12,12 @@ const ClientsSchema = new mongoose.Schema({
     status: String,
     statutEntreprise: String,
     raisonSociale: String,
-    siret: String,
+    siret: String
 
 
 
 })
 
-module.exports = mongoose.model('Clients', ClientsSchema)
+const client = mongoose.model('Clients', ClientsSchema)
+
+module.exports = client

@@ -71,7 +71,8 @@
 
                 <tbody>
 
-                    {{#each dbArticle }}
+                    {{#each client }}
+                    <!-- clientAffichageController-->
 
                     <tr>
 
@@ -84,7 +85,7 @@
                         <td class="text-center">{{ this.status }}</td>
                         <td class="text-center">{{ this.statutEntreprise}}</td>
                         <td class="text-center">{{ this.raisonSociale}}</td>
-                        <td class="text-center"{{ this.siret }}></td>
+                        <td class="text-center">{{ this.siret }}</td>
 
 
 
@@ -92,8 +93,8 @@
 
                         <td class="text-center">
                             <button type="button" class="btn btn-outline-danger" data-toggle="modal"
-                                data-target="#modifierReal{{_id}}">
-                                Modifier
+                                data-target="#modifierReal{{_id}}">Modifier
+
                             </button>
                         </td>
                         {{!-- / Bouton Modifier --}}
@@ -112,9 +113,12 @@
 
                         {{!-- Bouton Supprimer --}}
                         <td class="text-center">
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteItem">
-                                Supprimer
-                            </button>
+                            <form action="/{{_id}}?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger" data-toggle="modal"
+                                    data-target="#deleteItem">
+                                    Supprimer
+                                </button>
+                            </form>
                         </td>
                         {{!-- / Bouton Supprimer --}}
 

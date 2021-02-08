@@ -69,16 +69,16 @@
                 {{!-- Corps du tableau (body) avec each pour item répété --}}
                 <tbody>
                     {{!-- Données du Tableau ---------------------------}}
-                    {{#each dbArticle }}
+                    {{#each devis }}
 
                     <tr>
 
                         <td class="text-center">{{ this.entitled }}</td>
                         <td class="text-center">{{ this.object }}</td>
-                        <td class="text-center">{{ this.content }}</td>                        
-                        <td class="text-center">{{ this.name }}</td>
-                        <td class="text-center">{{ this.firstName }}</td>
-                        <td class="text-center">{{ this.email }}</td>
+                        <td class="text-center">{{ this.content }}</td>
+                        <td class="text-center">{{ this.nameDevis }}</td>
+                        <td class="text-center">{{ this.firstNameDevis }}</td>
+                        <td class="text-center">{{ this.emailDevis }}</td>
 
                         {{!-- Bouton Modifier --}}
                         <td class="text-center">
@@ -89,15 +89,6 @@
                         </td>
                         {{!-- / Bouton Modifier --}}
 
-                        {{!-- Bouton Supprimer --}}
-                        <td class="text-center">
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteItem">
-                                Supprimer
-                            </button>
-                        </td>
-                        {{!-- / Bouton Supprimer --}}
-
-
 
 
                         {{!-- Modal Modifier Devis --}}
@@ -106,6 +97,25 @@
 
                         {{!-- / Modal Modifier Devis --}}
 
+
+
+
+
+                        {{!-- Bouton Supprimer --}}
+                        <td class="text-center">
+                            <form action="/{{_id}}/devis?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger" data-toggle="modal"
+                                    data-target="#deleteItem">
+                                    Supprimer
+                                </button>
+                            </form>
+                        </td>
+                        {{!-- / Bouton Supprimer --}}
+
+
+
+
+                        
                     </tr>
 
                     {{/each}}
