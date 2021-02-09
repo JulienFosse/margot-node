@@ -13,11 +13,11 @@
                 Formulaire------------------------------------
                 --}}
 
-                <form class="needs-validation " action="realisation/edit" method="POST">
+                <form class="needs-validation " action="/{{_id}}/realisation?_method=PUT" method="POST" enctype="multipart/form-data" >
                     <div class="form-row row ">
                         <div class="col-md-6 mx-auto text-center mb-3 ">
                             <label for="validationTooltip01 ">Titre</label>
-                            <input type="text " name="title" class="form-control " id="validationTooltip01 " value=" ">
+                            <input type="text " name="titleReal" class="form-control " id="validationTooltip01 " value="{{this.titleReal}}">
                             <div class="valid-tooltip ">
 
                             </div>
@@ -30,7 +30,7 @@
                         <div class="col-md-6 mx-auto text-center mb-3 ">
                             <label for="validationTooltip01">Description de la
                                 réalisation</label>
-                            <textarea class="form-control" name="content" id="exampleFormControlTextarea1 " rows="3 "></textarea>
+                            <textarea class="form-control" name="contentReal" id="exampleFormControlTextarea1 " value=""rows="3"  >{{this.contentReal}}</textarea >
 
                             <div class="valid-tooltip">
 
@@ -45,7 +45,7 @@
                         <div class="col-md-6 mx-auto text-center mb-3 ">
                             <label for="validationTooltip01 ">Prix de la
                                 réalisation</label>
-                            <input type="text" class="form-control" name="price" id="validationTooltip01 " value=" ">
+                            <input type="text" class="form-control" name="priceReal" id="validationTooltip01 " value="{{this.contentReal}}">
                             <div class="valid-tooltip ">
                                 Looks good!
                             </div>
@@ -56,7 +56,7 @@
 
                     <div class="form-group col-md-6 mx-auto text-center mb-3 ">
                         <label for="exampleFormControlTextarea1 ">Temps passé</label>
-                        <input type="text" class="form-control" name="time" id="validationTooltip01 " value=" ">
+                        <input type="text" class="form-control" name="timeReal" id="validationTooltip01 " value="{{this.timeReal}}">
                     </div>
 
                     {{!-- Choisir un fichier --}}
@@ -64,14 +64,14 @@
                     <div class="col-md-6 mx-auto text-center mb-3 ">
                         <label for="formFile" class="form-label">Ajouter une
                             image</label>
-                        <input class="form-control" name="image" type="file" id="formFile">
+                        <input class="form-control" name="imageReal" type="file" id="formFile" value="{{this.imageReal}}" >
                     </div>
 
                     {{!-- bouton modifier --}}
 
                     <div class="row ">
                         <div class="col-md-12 text-center my-5 ">
-                            <button class="btn btn-dark " type="submit">Modifier {{ title  }}</button>
+                            <button class="btn btn-dark " type="submit">Modifier {{ this.titleReal  }}</button>
                         </div>
                     </div>
 

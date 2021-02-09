@@ -1,3 +1,5 @@
-module.exports = function(req, res) {
-    res.render('about')
+module.exports = {
+    get: function(req, res) {
+        res.render('about')
+    }
 }

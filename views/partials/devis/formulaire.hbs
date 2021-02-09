@@ -7,13 +7,13 @@
                     <h3 class="text-success">DEVIS en ligne gratuit !</h3>
                 </div>
 
-                <form>
+                <form action="/admin/createDevis" method="POST" >
 
                     {{!-- Demande de devis ou autres --}}
 
                     <div class="form-group mb-4">
                         <label for="exampleFormControlSelect1"></label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" name="entitled" id="exampleFormControlSelect1">
                             <option>Demande de devis</option>
                             <option>Question</option>
                             <option>Commentaires</option>
@@ -21,7 +21,7 @@
                         </select>
                         <div class="mb-4 mt-4 mx-auto col-md-12 text-center">
                             <label for="validationTooltip01 " class="text-white">Objet de la demande</label>
-                            <input type="text " class="form-control " id="validationTooltip01 " value=" " required>
+                            <input type="text " class="form-control" name="objectDevis" id="validationTooltip01 " value=" " required>
                             <div class="valid-tooltip ">
                                 Looks good!
                             </div>
@@ -32,7 +32,7 @@
 
                     <div class="form-group mb-4 text-center">
                         <label for="exampleFormControlTextarea1" class="text-white">Description</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+                        <textarea class="form-control" name="contentDevis" id="exampleFormControlTextarea1" rows="2"></textarea>
                     </div>
 
                     {{!-- Nom --}}
@@ -41,7 +41,7 @@
 
                         <div class="mb-4 mx-auto col-md-6 text-center">
                             <label for="validationTooltip01 " class="text-white">Nom</label>
-                            <input type="text " class="form-control " id="validationTooltip01 " value=" " required>
+                            <input type="text " class="form-control" name="nameDevis" id="validationTooltip01 " value=" " required>
                             <div class="valid-tooltip ">
                                 Looks good!
                             </div>
@@ -51,7 +51,7 @@
 
                         <div class="mb-4 mx-auto col-md-6 text-center">
                             <label for="validationTooltip01 " class="text-white">Prénom</label>
-                            <input type="text " class="form-control " id="validationTooltip01 " value=" " required>
+                            <input type="text " class="form-control" name="firstNameDevis" id="validationTooltip01 " value=" " required>
                             <div class="valid-tooltip ">
                                 Looks good!
                             </div>
@@ -62,13 +62,13 @@
 
                     <div class="form-group mb-3 text-center">
                         <label for="exampleFormControlInput1" class="text-white">Adresse E-mail</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                        <input type="email" class="form-control" name="emailDevis" id="exampleFormControlInput1"
                             placeholder="name@example.com">
                     </div>
 
                     <div class="row ">
                         <div class="col-md-12 button text-center ">
-                            <button href="#" type="button" class="btn btn-success px-4 py-2 mt-3 mb-5">Envoyer</button>
+                            <button type="submit" class="btn btn-success px-4 py-2 mt-3 mb-5">Envoyer</button>
                         </div>
                     </div>
                 </form>

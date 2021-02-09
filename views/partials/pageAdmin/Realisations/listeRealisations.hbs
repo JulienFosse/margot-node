@@ -72,11 +72,11 @@
 
                     <tr>
 
-                        <td class="text-center">{{ this.title}}</td>
-                        <td class="text-center">{{ content}}</td>
-                        <td class="text-center">{{ price}}</td>
-                        <td class="text-center">{{ time}}</td>
-                        <td class="text-center">{{ image}}</td>
+                        <td class="text-center">{{ this.titleReal}}</td>
+                        <td class="text-center">{{ this.contentReal}}</td>
+                        <td class="text-center">{{ this.priceReal}}</td>
+                        <td class="text-center">{{ this.timeReal}}</td>
+                        <td class="text-center">{{ this.imageReal}}</td>
 
 
 
@@ -104,8 +104,8 @@
 
                         {{!-- Bouton Supprimer --}}
                         <td class="text-center">
-                            <form action="realisation/delete" method="POST">
-                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                            <form action="/{{_id}}/realisation?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger" data-toggle="modal"
                                     data-target="#deleteItem">
                                     Supprimer
                                 </button>

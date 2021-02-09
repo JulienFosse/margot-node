@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 const DevisSchema = new mongoose.Schema({
 
     entitled: String,
-    object: String,
-    content: String,
+    objectDevis: String,
+    contentDevis: String,
     nameDevis: String,
     firstNameDevis: String,
     emailDevis: String

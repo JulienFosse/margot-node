@@ -6,6 +6,8 @@ const client = require('../database/models/clients');
 const devis = require('../database/models/devis');
 const message = require('../database/models/messages');
 const realisation = require('../database/models/realisations');
+const path = require('path');
+
 
 
 
@@ -24,11 +26,16 @@ module.exports = {
                     .exec((err, devisschema) => {
                         message.find()
                             .exec((err, messageschema) => {
-                                res.render('pageAdmin', {
-                                    client: clientschema,
-                                    devis: devisschema,
-                                    message: messageschema
-                                })
+                                realisation.find()
+                                    .exec((err, realisationschema) => {
+                                        res.render('pageAdmin', {
+                                            client: clientschema,
+                                            devis: devisschema,
+                                            message: messageschema,
+                                            realisation: realisationschema
+                                        })
+                                    })
+
 
                             })
                     })
@@ -54,10 +61,22 @@ module.exports = {
     },
     postRealisation: function(req, res) {
 
-        realisation.create(req.body, function(err, post) {
+        const { image } = req.files
 
-            res.redirect('/admin')
+        const uploadFiles = path.resolve(__dirname, "..", "/public/images_realisations/", image.imageReal);
+
+        console.log(Date.now() + "-" + req.files.image);
+
+        console.log(image);
+
+        image.mv(uploadFiles, (err) => {
+            realisation.create(req.body, function(err, post) {
+
+                res.redirect('/admin')
+            })
         })
+
+
 
     },
 
@@ -95,7 +114,7 @@ module.exports = {
 
             function(err) {
                 if (!err) {
-                    console.log("élément modifié !");
+                    console.log("client modifié !");
                     res.redirect('/admin')
 
 
@@ -130,7 +149,43 @@ module.exports = {
 
             function(err) {
                 if (!err) {
-                    console.log("élément modifié !");
+                    console.log("devis modifié !");
+                    res.redirect('/admin')
+
+
+                } else {
+                    console.log(err);
+                }
+            }
+        )
+    },
+    putRealisation: function(req, res) {
+        realisation.update(
+            // condition
+            {
+                _id: req.params.id
+            },
+            // upadte
+            {
+                titleReal: req.body.titleReal,
+                contentReal: req.body.contentReal,
+                priceReal: req.body.priceReal,
+                timeReal: req.body.timeReal,
+                imageReal: req.body.imageReal,
+
+
+            },
+
+            // plusieurs modifications en même temps
+            {
+                multi: true
+            },
+
+            // execution
+
+            function(err) {
+                if (!err) {
+                    console.log("realisation modifié !");
                     res.redirect('/admin')
 
 
@@ -205,7 +260,22 @@ module.exports = {
 
             function(err) {
                 if (!err) {
-                    console.log('devis supprimé');
+                    console.log('message supprimé');
+                    res.redirect('/admin')
+                } else {
+                    console.log(err);
+                }
+            }
+        ).lean()
+    },
+    deleteRealisation: function(req, res) {
+        realisation.deleteOne({
+                _id: req.params.id
+            },
+
+            function(err) {
+                if (!err) {
+                    console.log('realisation supprimé');
                     res.redirect('/admin')
                 } else {
                     console.log(err);

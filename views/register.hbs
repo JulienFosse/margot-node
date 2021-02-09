@@ -1,19 +1,19 @@
 <div class="container h-100 mt-5">
     <h2 class="text-center my-4">Créer un compte</h2>
     <div class="d-flex justify-content-center form_container">
-        <form action="/user/register" method="POST" >
+        <form action="/user/create" method="POST" >
             <div class="input-group mb-3">
                 <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                 </div>
-                <input type="email" name="email" class="form-control input_user" placeholder="email" value={{data.email}} >
+                <input type="email" name="email" class="form-control input_user" placeholder="email">
             </div>
 
             <div class="input-group mb-2">
                 <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                 </div>
-                <input type="password" name="password" class="form-control input_pass"  placeholder="mot de passe" value={{data.password}}>
+                <input type="password" name="password" class="form-control input_pass"  placeholder="mot de passe">
             </div>
 
             

@@ -1,3 +1,5 @@
-module.exports = function(req, res) {
-    res.render('pageAdmin')
+module.exports = {
+    get: function(req, res) {
+        res.render('pageAdmin')
+    }
 }

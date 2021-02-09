@@ -1,4 +1,7 @@
-module.exports = function(req, res) {
+module.exports = {
 
-    res.render('home')
+    get: function(req, res) {
+
+        res.render('home')
+    }
 }

@@ -1,3 +1,5 @@
-module.exports = function(req, res) {
-    res.render('login')
+module.exports = {
+    get: function(req, res) {
+        res.render('login')
+    }
 }

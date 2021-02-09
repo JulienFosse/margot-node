@@ -7,9 +7,15 @@ const
     mongoose = require('mongoose'), // Permet de se connecter à MongoDB
     bodyParser = require('body-parser'), // Permet de récupérer la méthode POST et de lire son format JSON
     fileUpload = require('express-fileupload'),
-    methodOverride = require('method-override');
+    methodOverride = require('method-override'),
+    path = require('path');
 
+require('dotenv').config();
 
+// Path
+
+app.use(express.static(path.join(__dirname, 'public')))
+console.log(path.join(__dirname, 'public'));
 
 // Handlebars
 app.set('view engine', 'hbs');
@@ -22,7 +28,9 @@ app.engine('hbs', hbs({
 app.use('/assets', express.static('public'));
 
 // Mongoose
-const urlDb = 'mongodb://localhost:27017/menuiserieMargot'
+// const urlDb = 'mongodb://localhost:27017/menuiserieMargot'
+const urlDb = process.env.MONGO_URI
+console.log(urlDb);
 mongoose.connect(urlDb, {
     useNewUrlParser: true, // Gaëtan
     useUnifiedTopology: true, // Gaëtan
@@ -43,41 +51,18 @@ app.use(fileUpload());
 app.use(methodOverride("_method"));
 
 
+
+
+
+
+
+
+
+
+
 // ROUTER
 const ROUTER = require('./controllers/router')
 app.use('/', ROUTER)
-
-
-
-
-// Controllers
-const homeController = require('./controllers/homePage'),
-    aboutController = require('./controllers/about'),
-    lesRealisationsController = require('./controllers/lesRealisations'),
-    devisController = require('./controllers/devis'),
-    contactPageController = require('./controllers/contact'),
-    pageAdminController = require('./controllers/pageAdmin'),
-    userCreateController = require('./controllers/userCreate'),
-    userLoginController = require('./controllers/userLogin');
-
-
-
-
-
-
-
-// Routes
-
-app.get('/', homeController)
-app.get('/about', aboutController)
-app.get('/lesRealisations', lesRealisationsController)
-app.get('/devis', devisController)
-app.get('/contactPage', contactPageController)
-app.get('/pageAdmin', pageAdminController)
-app.get('/user/create', userCreateController)
-app.get('/user/login', userLoginController)
-
-
 
 
 
