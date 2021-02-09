@@ -30,7 +30,7 @@
         "express-handlebars": "^3.1.0",
         "express-router": "0.0.1",
         "method-override": "^3.0.0",
-        "mongoose": "^5.10.15"
+        "mongoose": "^5.11.12"
     },
     "devDependencies": {
         "handlebars": "^4.5.0",
