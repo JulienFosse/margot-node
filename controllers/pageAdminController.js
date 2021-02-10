@@ -67,20 +67,22 @@ module.exports = {
     },
     postRealisation: function(req, res) {
 
-        const { imageReal } = req.files
+        const {
+            imageReal
+        } = req.files
 
         console.log(req.files);
 
-        const uploadFiles = path.resolve("public/images_realisations/" + Date.now() + '-' + imageReal.name);
+        const uploadFiles = path.resolve("public/images_realisations/" + imageReal.name);
 
-        console.log(Date.now() + "-" + req.files.imageReal);
+        console.log(req.files.imageReal);
 
         console.log(imageReal);
 
         imageReal.mv(uploadFiles, (err) => {
             realisation.create({
                 ...req.body,
-                imageReal: '/images_realisations/' + Date.now() + '-' + imageReal.name
+                imageReal: '/images_realisations/' + imageReal.name
             }, function(err, post) {
                 if (err) {
                     console.log(err);
@@ -174,6 +176,11 @@ module.exports = {
         )
     },
     putRealisation: function(req, res) {
+
+        const {
+            imageReal
+        } = req.files
+
         realisation.update(
             // condition
             {
@@ -181,11 +188,12 @@ module.exports = {
             },
             // upadte
             {
+
                 titleReal: req.body.titleReal,
                 contentReal: req.body.contentReal,
                 priceReal: req.body.priceReal,
                 timeReal: req.body.timeReal,
-                imageReal: req.body.imageReal,
+                imageReal: '/images_realisations/' + imageReal.name
 
 
             },
@@ -283,8 +291,12 @@ module.exports = {
         ).lean()
     },
     deleteRealisation: function(req, res) {
+
+
         realisation.deleteOne({
-                _id: req.params.id
+                _id: req.params.id,
+
+
             },
 
             function(err) {
