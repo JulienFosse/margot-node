@@ -14,7 +14,8 @@ const aboutController = require('./about'),
     contactPageController = require('./contact'),
     pageAdmin = require('./pageAdmin'),
     userCreatePageController = require('./userCreatePage'),
-    userLoginController = require('./userLogin');
+    userLoginController = require('./userLogin'),
+    userLoginAuthController = require('./userLoginAuth')
 
 
 
@@ -96,6 +97,10 @@ router.route('/user/create')
 
 router.route('/user/login')
     .get(userLoginController.get)
+
+
+router.route('/user/loginAuth')
+    .post(userLoginAuthController.get)
 
 
 

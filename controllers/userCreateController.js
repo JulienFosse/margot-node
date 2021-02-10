@@ -13,9 +13,11 @@ module.exports = {
 
             if (err) {
                 res.redirect('/user/create')
+            } else {
+                res.redirect('/')
             }
 
-            res.redirect('/')
+
         })
 
     }
