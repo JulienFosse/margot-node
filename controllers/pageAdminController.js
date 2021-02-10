@@ -20,20 +20,26 @@ module.exports = {
 
     // récupérer et afficher les données d'une collection
     get: function(req, res) {
-        client.find()
+        client.find().lean()
             .exec((err, clientschema) => {
-                devis.find()
+                devis.find().lean()
                     .exec((err, devisschema) => {
-                        message.find()
+                        message.find().lean()
                             .exec((err, messageschema) => {
-                                realisation.find()
+                                realisation.find().lean()
                                     .exec((err, realisationschema) => {
                                         res.render('pageAdmin', {
                                             client: clientschema,
                                             devis: devisschema,
                                             message: messageschema,
-                                            realisation: realisationschema
+                                            realisation: realisationschema,
+
+
                                         })
+
+                                        console.log(realisationschema);
+
+
                                     })
 
 
@@ -56,21 +62,29 @@ module.exports = {
 
         devis.create(req.body, function(err, post) {
 
-            res.redirect('/admin')
+
         })
     },
     postRealisation: function(req, res) {
 
-        const { image } = req.files
+        const { imageReal } = req.files
 
-        const uploadFiles = path.resolve(__dirname, "..", "/public/images_realisations/", image.imageReal);
+        console.log(req.files);
 
-        console.log(Date.now() + "-" + req.files.image);
+        const uploadFiles = path.resolve("public/images_realisations/" + Date.now() + '-' + imageReal.name);
 
-        console.log(image);
+        console.log(Date.now() + "-" + req.files.imageReal);
 
-        image.mv(uploadFiles, (err) => {
-            realisation.create(req.body, function(err, post) {
+        console.log(imageReal);
+
+        imageReal.mv(uploadFiles, (err) => {
+            realisation.create({
+                ...req.body,
+                imageReal: '/images_realisations/' + Date.now() + '-' + imageReal.name
+            }, function(err, post) {
+                if (err) {
+                    console.log(err);
+                }
 
                 res.redirect('/admin')
             })

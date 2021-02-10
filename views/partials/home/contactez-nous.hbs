@@ -1,21 +1,21 @@
 <!-- Contactez-nous ========================================== -->
 
-<section class="container">
+<section class="container-fluid bg-dark">
     <div class="row">
         <div class="col-md-12 text-center mt-5 mb-2">
-            <h2>CONTACTEZ-NOUS</h2>
-            <div class="col-md-12 text-center underlined mx-auto "></div>
+            <h2 class="text-white">CONTACTEZ-NOUS</h2>
+            <div class="col-md-12 text-center underlined mx-auto  bg-white "></div>
         </div>
 
     </div>
 
 
     <div class=" row ">
-        <div class="col-md-6 text-center my-4 mx-auto ">
+        <div class="col-md-5 text-center my-4 mx-auto ">
 
             <!-- Nom--->
 
-            <form action="/message/post" method="POST" class="needs-validation ">
+            <form action="/message/post" method="POST" class="needs-validation text-white">
                 <div class="form-row row ">
                     <div class="col-md-6 mb-3 ml-auto mr-auto ">
                         <label for="validationTooltip01 ">Nom</label>
@@ -27,9 +27,10 @@
 
                     {{!-- Prénom --}}
 
-                    <div class="col-md-6 mb-3 ml-auto mr-auto ">
-                        <label for="validationTooltip01 ">Prénom</label>
-                        <input type="text" name="firstNameMessage" class="form-control " id="validationTooltip01 " value=" ">
+                    <div class="col-md-6 mb-3 ml-auto mr-auto text-white ">
+                        <label for="validationTooltip01 text-white">Prénom</label>
+                        <input type="text" name="firstNameMessage" class="form-control " id="validationTooltip01 "
+                            value=" ">
                         <div class="valid-tooltip ">
                             Looks good!
                         </div>
@@ -37,9 +38,10 @@
 
                     <!-- Adresse Mail --->
 
-                    <div class="col-md-6 mb-3 ml-auto mr-auto ">
-                        <label for="validationTooltip01 ">Adresse Mail</label>
-                        <input type="text" name="emailMessage" class="form-control " id="validationTooltip01 " value=" " >
+                    <div class="col-md-6 mb-3 ml-auto mr-auto text-white ">
+                        <label for="validationTooltip01 text-white">Adresse Mail</label>
+                        <input type="text" name="emailMessage" class="form-control " id="validationTooltip01 "
+                            value=" ">
                         <div class="valid-tooltip ">
                             Looks good!
                         </div>
@@ -49,9 +51,10 @@
                 <!-- Objet --->
 
                 <div class="form-row ">
-                    <div class="col-md-12 mb-3 text-center ml-auto mr-auto ">
-                        <label for="validationTooltip01 ">Objet :</label>
-                        <input type="text" name="objectMessage" class="form-control " id="validationTooltip01 " value=" ">
+                    <div class="col-md-12 mb-3 text-center ml-auto mr-auto text-white ">
+                        <label for="validationTooltip01 text-white">Objet :</label>
+                        <input type="text" name="objectMessage" class="form-control " id="validationTooltip01 "
+                            value=" ">
                         <div class="valid-tooltip ">
                             Looks good!
                         </div>
@@ -60,18 +63,26 @@
 
                 <!-- Commentaires- -->
 
-                <div class="form-group text-center ">
-                    <label for="exampleFormControlTextarea1 ">Description</label>
-                    <textarea class="form-control" name="contentMessage" id="exampleFormControlTextarea1 " rows="3 "></textarea>
+                <div class="form-group text-center text-white">
+                    <label for="exampleFormControlTextarea1 text-white">Description</label>
+                    <textarea class="form-control" name="contentMessage" id="exampleFormControlTextarea1 "
+                        rows="3 "></textarea>
                 </div>
 
                 <div class="row ">
                     <div class="col-md-12 text-center my-5 ">
-                        <button class="btn btn-dark " type="submit"> Envoyer</button>
+                        <button class="btn btn-light text-dark" type="submit">
+                            Envoyer</button>
                     </div>
                 </div>
-                
+
             </form>
+
+
+            <!-- Modal -->
+
+
+           
         </div>
     </div>
 </section>

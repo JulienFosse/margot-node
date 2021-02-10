@@ -1,46 +1,53 @@
 <section>
     <div class="container">
-    <div class="row">
-        <div class="col-md-12 text-center mt-5 mb-5 text-white">
-            <h3 class="text-dark">Descriptions réalisations</h3>
-            <p class="underlined mx-auto"></p>
+        <div class="row">
+            <div class="col-md-12 text-center mt-5 mb-5 text-white">
+                <h3 class="text-dark">Descriptions réalisations</h3>
+                <p class="underlined mx-auto"></p>
+            </div>
         </div>
-    </div>
 
-    {{!-- description 1 ====================== --}}
+        {{!-- description 1 ====================== --}}
 
-    <div class="row">
-        <div class="col-md-6 d-flex justify-content-center d-flex align-items-center">
-            <img src="/assets/images/Cuisine/cuisine4.jpg" alt="diplôme1" class="h-50">
+        
+
+        <div class="row">
+
+            {{#each realisation}}
+
+            <div class="col-md-6 d-flex justify-content-center d-flex align-items-center">
+                <img src="" alt="diplôme1" class="h-50">
+            </div>
+            <div class="col-md-6 d-flex justify-content-center d-flex align-items-center">
+                <h3>{{ titleReal }}</h3>
+            </div>
+
+            {{/each}}
+
         </div>
-        <div class="col-md-6 d-flex justify-content-center d-flex align-items-center"> Réalisation 1 (description)</div>
+
+
+
+
+
+        {{!-- description 3 =================== --}}
+
+        {{!-- <div class="row">
+            <div class="col-md-6 d-flex justify-content-center d-flex align-items-center">
+                <img src="/assets/images/Cuisine/cuisine4.jpg" alt="diplôme1" class="h-50">
+            </div>
+            <div class="col-md-6 d-flex justify-content-center d-flex align-items-center">Réalisation 3 (description)
+            </div>
+        </div> --}}
+
+        {{!-- description 4 ==================== --}}
+
+        {{!-- <div class="row">
+            <div class="col-md-6 d-flex justify-content-center d-flex align-items-center">
+                Réalisation 4 (description)
+            </div>
+            <div class="col-md-6 d-flex justify-content-center d-flex align-items-center"> <img
+                    src="/assets/images/Cuisine/cuisine4.jpg" alt="diplôme1" class="h-50"></div>
+        </div> --}}
     </div>
-
-    {{!-- description 2 ==================== --}}
-
-    <div class="row">
-        <div class="col-md-6 d-flex justify-content-center d-flex align-items-center">
-             <a href="/realisationId/{{_id}}"><h3>Réalisation 2 (description)</h3></a>
-        </div>
-        <div class="col-md-6 d-flex justify-content-center d-flex align-items-center "> <img
-                src="/assets/images/Cuisine/cuisine4.jpg" alt="diplôme1" class="h-50"></div>
-    </div>
-
-    {{!-- description 3 =================== --}}
-
-    <div class="row">
-        <div class="col-md-6 d-flex justify-content-center d-flex align-items-center">
-            <img src="/assets/images/Cuisine/cuisine4.jpg" alt="diplôme1" class="h-50">
-        </div>
-        <div class="col-md-6 d-flex justify-content-center d-flex align-items-center">Réalisation 3 (description)</div>
-    </div>
-
-    {{!-- description 4 ==================== --}}
-
-    <div class="row">
-        <div class="col-md-6 d-flex justify-content-center d-flex align-items-center">
-            Réalisation 4 (description)
-        </div>
-        <div class="col-md-6 d-flex justify-content-center d-flex align-items-center"> <img src="/assets/images/Cuisine/cuisine4.jpg" alt="diplôme1"class="h-50"></div>
-    </div>
-</div></section>
+</section>

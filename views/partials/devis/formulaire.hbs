@@ -68,10 +68,37 @@
 
                     <div class="row ">
                         <div class="col-md-12 button text-center ">
-                            <button type="submit" class="btn btn-success px-4 py-2 mt-3 mb-5">Envoyer</button>
+                            <button type="submit" class="btn btn-success px-4 py-2 mt-3 mb-5" data-toggle="modal" data-target="#exampleModal"  >Envoyer</button>
                         </div>
                     </div>
                 </form>
+
+                {{!-- Modal --}}
+
+                <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+
+                        <button type="submit" class="close float-right" data-dismiss="modal" aria-label="Close">
+                            <span class="float-right" aria-hidden="true">&times;</span>
+                        </button>
+
+                        <div class="modal-body ">
+                            <h5 class="text-success text-center">Devis envoyé !</h5>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
             </div>
         </div>
     </div>

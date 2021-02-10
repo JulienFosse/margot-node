@@ -8,6 +8,7 @@ module.exports = {
         message.create(req.body, function(err, post) {
             res.redirect('/')
         })
+
     }
 
 
