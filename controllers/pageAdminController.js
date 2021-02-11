@@ -36,8 +36,8 @@ module.exports = {
 
 
                                         })
+                                        console.log(devisschema);
 
-                                        console.log(realisationschema);
 
 
                                     })
@@ -150,8 +150,11 @@ module.exports = {
             // upadte
             {
                 entitled: req.body.entitled,
-                object: req.body.object,
-                content: req.body.content,
+                objectDevis: req.body.objectDevis,
+                contentDevis: req.body.contentDevis,
+                nameDevis: req.body.nameDevis,
+                firstNameDevis: req.body.firstNameDevis,
+                emailDevis: req.body.emailDevis,
 
 
             },
