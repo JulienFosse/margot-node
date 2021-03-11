@@ -8,15 +8,15 @@ const
     bodyParser = require('body-parser'), // Permet de récupérer la méthode POST et de lire son format JSON
     fileUpload = require('express-fileupload'),
     methodOverride = require('method-override'),
-    path = require('path'),
-    const helmet = require("helmet");
+    path = require('path');
+
 
 
 
 require('dotenv').config();
 
 // Helmet
-app.use(helmet());
+
 
 
 // Path
