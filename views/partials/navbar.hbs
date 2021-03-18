@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse bg-dark ">
+{{!-- <nav class="navbar navbar-inverse bg-dark ">
     <div class="container-fluid ">
         <div class="navbar-header ml-5">
             <a class="navbar-brand text-white" href="/">Menuiserie Margot</a>
@@ -16,4 +16,64 @@
         </ul>
     </div>
 
+</nav> --}}
+
+{{!-- Début de la navbar --}}
+
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+
+    {{!-- Nom du site --}}
+
+    <a class="navbar-brand text-white ml-5" href="/">Menuiserie Margot</a>
+
+    {{!-- / nom du site --}}
+
+    {{!-- Icon menu hamburger --}}
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    {{!-- / icon menu hamburger --}}
+
+
+    <div class="collapse navbar-collapse my-auto" id="navbarSupportedContent">
+
+        {{!-- Contenu navbar --}}
+
+        <ul class="navbar-nav mx-auto">
+
+            <li class="nav-item active">
+                <a class="nav-link text-white mr-3 navbarunderline" href="/">Accueil</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-white mr-3 navbarunderline" href="/about">Qui sommes-nous?</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white mr-3 navbarunderline" href="/lesRealisations">Les réalisations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white mr-3 navbarunderline" href="/devis">Devis</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white mr-3 navbarunderline" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white mr-3 navbarunderline" href="/boutique">Boutique</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white mr-3 navbarunderline" href="/pageAdmin"></a>
+            </li>
+        </ul>
+
+        {{!-- /contenu navbar --}}
+
+    </div>
+
 </nav>
+
+
+
+{{!-- Fin de la navbar --}}

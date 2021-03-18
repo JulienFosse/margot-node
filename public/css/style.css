@@ -74,6 +74,12 @@ body {
 }
 
 
+/* CSS Navbar */
+
+
+/* /fin CSS Navbar */
+
+
 /* CSS rajouté pour galerie photos */
 
 .photo-gallery {
@@ -154,9 +160,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
-
-/* .bg-image::after {} */
 
 
 /* /Fin Background contact Home */
