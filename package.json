@@ -22,7 +22,7 @@
     },
     "homepage": "https://github.com/xdrkush/architecture-nodejs-base#readme",
     "dependencies": {
-        "bcrypt": "^5.0.0",
+        "bcrypt": "^5.0.1",
         "body-parser": "^1.19.0",
         "bootstrap": "^4.5.0",
         "dotenv": "^8.2.0",
